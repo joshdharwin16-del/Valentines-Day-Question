@@ -2,112 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Happy Valentine's Day ❤️</title>
+    <title>Will You Be My Valentine? ❤️</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 1.5s ease;
-        }
-
-        h1 {
-            color: #e63946;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        p {
-            color: #555;
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-        }
-
-        button {
-            background: #e63946;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: transform 0.2s, background 0.3s;
-        }
-
-        button:hover {
-            background: #d62828;
-            transform: scale(1.05);
-        }
-
-        .heart {
-            position: absolute;
-            font-size: 24px;
-            animation: floatUp 4s linear forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes floatUp {
-            from {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateY(-600px);
-                opacity: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="card">
-        <h1>Happy Valentine’s Day ❤️</h1>
-        <p>You make every day a little more special.</p>
-        <button onclick="releaseHearts()">Send Love 💕</button>
+        <h1>Will you be my Valentine? 💘</h1>
+        <p>I have something special for you…</p>
+
+        <div class="buttons">
+            <button class="yes" onclick="goYes()">Yes ❤️</button>
+            <button class="no" onmouseover="moveNo()">No 💔</button>
+        </div>
     </div>
 
-    <script>
-        function releaseHearts() {
-            for (let i = 0; i < 15; i++) {
-                const heart = document.createElement("div");
-                heart.classList.add("heart");
-                heart.innerHTML = "❤️";
-                heart.style.left = Math.random() * 100 + "vw";
-                heart.style.bottom = "0px";
-                heart.style.fontSize = (20 + Math.random() * 20) + "px";
-                document.body.appendChild(heart);
-
-                setTimeout(() => {
-                    heart.remove();
-                }, 4000);
-            }
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
